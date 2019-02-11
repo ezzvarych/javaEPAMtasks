@@ -24,7 +24,7 @@ public class Controller {
             for (int i = 0; i < model.getGreetingParts().length; i++) {
                 view.printMessage(View.INPUT_STR_DATA);
                 inputArray[i] = sc.nextLine();
-                if (!isStringsEqualsIgnoreCase(inputArray[i], model.getGreetingParts()[i])) {
+                if (!inputArray[i].equalsIgnoreCase(model.getGreetingParts()[i])) {
                     view.printMessage(View.WRONG_INPUT_STR_DATA);
                     continue infiniteLoop;
                 }
@@ -33,7 +33,4 @@ public class Controller {
         }
     }
 
-    private boolean isStringsEqualsIgnoreCase(String str1, String str2) {
-        return str1.toLowerCase().equals(str2.toLowerCase());
-    }
 }

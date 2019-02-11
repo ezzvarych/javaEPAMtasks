@@ -9,15 +9,39 @@ public class Model {
     //Number to guess
     private int number;
 
-    private List<Integer> previousTurns;
-    private int currentLowerBound;
-    private int currentUpperBound;
+    private List<Integer> previousTurns = new ArrayList<>();
+    private int currentLowerBound = 0;
+    private int currentUpperBound = 100;
 
-    public Model() {
-        number = new Random().nextInt(101);
-        previousTurns = new ArrayList<Integer>();
-        currentLowerBound = 0;
-        currentUpperBound = 100;
+    public void setNumber() {
+        number = new Random().nextInt(currentUpperBound - 1);
+    }
+
+    /**
+     * Check if number in current guessing bounds
+     * @param userTurn, inputted by user
+     * @return
+     */
+    public boolean isInBounds(int userTurn) {
+        return userTurn >= currentLowerBound && userTurn <= currentUpperBound;
+    }
+
+    /**
+     * End game if number is guessed, fix bounds if not
+     * @param userTurn
+     * @return
+     */
+    public boolean checkNumber(int userTurn) {
+        if (userTurn == number) {
+            return true;
+        } else {
+            if (userTurn <= number) {
+                currentLowerBound = userTurn;
+            } else if (userTurn >= number) {
+                currentUpperBound = userTurn;
+            }
+        }
+        return false;
     }
 
     public int getNumber() {

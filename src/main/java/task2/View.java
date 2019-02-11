@@ -5,12 +5,9 @@ import java.util.List;
 public class View {
     public static final String WELCOME_MESSAGE = "Welcome! We guessed a number between 0 and 100. Figure it out!";
     public static final String INP_INT = "Input your number: ";
-    public static final String REPEATED_NUMBER = "You've already tried this number";
-    public static final String WRONG_INP = "Please, input integer number between 0 and 100!";
+    public static final String WRONG_INP = "Please, input integer number in current bounds!";
     public static final String CURR_BOUNDS = "Current bounds are %d and %d";
     public static final String PREV_TURNS = "Your previous turns were: ";
-    public static final String GREATER_THAN = "Number is greater than %d";
-    public static final String LESS_THAN = "Number is less than %d";
 
     /**
      * Print basic messages as greeting and start of new user turn
