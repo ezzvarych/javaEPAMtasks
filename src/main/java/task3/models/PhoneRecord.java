@@ -1,5 +1,7 @@
 package task3.models;
 
+import task3.controllers.InputNotebookRecord;
+
 import java.util.Date;
 
 public class PhoneRecord {
@@ -11,6 +13,19 @@ public class PhoneRecord {
     private String mobilePhoneNumber;
     private String email;
     private Date lastUpdate;
+
+    public PhoneRecord() {}
+
+    public PhoneRecord(InputNotebookRecord inr) {
+        this.firstname = inr.getFirstname();
+        this.lastname = inr.getLastname();
+        this.nickname = inr.getNickname();
+        this.comment = inr.getComment();
+        this.homePhoneNumber = inr.getHomePhoneNumber();
+        this.mobilePhoneNumber = inr.getMobilePhoneNumber();
+        this.email = inr.getEmail();
+        this.lastUpdate = new Date(System.currentTimeMillis());
+    }
 
     public String getLastname() {
         return lastname;

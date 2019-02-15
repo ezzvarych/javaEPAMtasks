@@ -1,5 +1,6 @@
 package task3.controllers;
 
+import jdk.internal.util.xml.impl.Input;
 import task3.models.Actions;
 import task3.models.RecordBook;
 import task3.models.PhoneRecord;
@@ -19,21 +20,29 @@ public class Controller {
         this.view = view;
     }
 
+    /**
+     * Whole application loop
+     */
     public void processUser() {
         while (true) {
             //view.printMessage(TextConstants.ASK_USER);
             Actions act = inputAction();
             if (act == Actions.INPUT_NEW_USER) {
-                model.addRecord(createRecord());
+                InputNotebookRecord inr = createRecord();
+                model.addRecord(new PhoneRecord(inr));
                 view.printMessage(TextConstants.SUCCESS_ADD);
             } else if (act == Actions.SEE_ALL_USERS) {
-                view.printList(model.getNotebook());
+                view.printList(model.getRecords());
             }
         }
     }
 
-    private PhoneRecord createRecord() {
-        PhoneRecord record = new PhoneRecord();
+    /**
+     * Creating and fulfilling new record
+     * @return
+     */
+    private InputNotebookRecord createRecord() {
+        InputNotebookRecord record = new InputNotebookRecord();
         record.setLastname(inputValidStringWithScanner(TextConstants.INP_LASTNAME, RegexContainer.NAME_REGEXP));
         record.setFirstname(inputValidStringWithScanner(TextConstants.INP_FIRSTNAME, RegexContainer.NAME_REGEXP));
         record.setNickname(inputValidStringWithScanner(TextConstants.INP_NICKNAME, RegexContainer.NICKNAME_REGEXP));
@@ -41,10 +50,13 @@ public class Controller {
         record.setHomePhoneNumber(inputValidStringWithScanner(TextConstants.INP_HOME_PHONE, RegexContainer.HOME_PHONE_REGEXP));
         record.setMobilePhoneNumber(inputValidStringWithScanner(TextConstants.INP_MOBILE_PHONE, RegexContainer.MOBILE_PHONE_REGEXP));
         record.setEmail(inputValidStringWithScanner(TextConstants.INP_EMAIL, RegexContainer.EMAIL_REGEXP));
-        record.setLastUpdate(new Date(System.currentTimeMillis()));
         return record;
     }
 
+    /**
+     * Ask user what to do
+     * @return Actions
+     */
     private Actions inputAction() {
         Actions action = null;
         String input = "";
@@ -60,6 +72,12 @@ public class Controller {
         return action;
     }
 
+    /**
+     * Validate input according to specific regex
+     * @param message
+     * @param regex
+     * @return
+     */
     private String inputValidStringWithScanner(String message, String regex) {
         String res;
         view.printMessage(message);

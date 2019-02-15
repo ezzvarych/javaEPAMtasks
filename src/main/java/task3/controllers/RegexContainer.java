@@ -1,7 +1,7 @@
 package task3.controllers;
 
 public interface RegexContainer {
-    String NAME_REGEXP = "[A-Z][a-z]*[-a-z]?[a-z]+";
+    String NAME_REGEXP = "[A-Z][a-z]*(-[A-Z])?[a-z]+";
     String NICKNAME_REGEXP = "\\w+";
     String COMMENT_REGEXP = ".+";
     String HOME_PHONE_REGEXP = "[0-9]{3,7}";

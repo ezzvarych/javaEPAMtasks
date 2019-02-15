@@ -9,7 +9,6 @@ public interface TextConstants {
     String INP_HOME_PHONE = "Please, input person's home phone number or skip it";
     String INP_MOBILE_PHONE = "Please, input person's mobile phone number or skip it";
     String INP_EMAIL = "Please, input person's email or skip it";
-    //String INP_SKYPE = "Please, input person's skype or skip it";
 
     String WRONG_INPUT = "Invalid input in this field!";
     String SUCCESS_ADD = "This record was added";
