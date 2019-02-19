@@ -15,6 +15,10 @@ public class View {
     }
 
     public void printWrongInput() {
-        System.out.println(TextConstants.WRONG_INPUT);
+        System.err.println(TextConstants.WRONG_INPUT);
+    }
+
+    public void printWrongInput(String message) {
+        System.err.println(message);
     }
 }

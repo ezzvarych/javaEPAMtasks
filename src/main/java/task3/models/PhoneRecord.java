@@ -8,10 +8,10 @@ public class PhoneRecord {
     private String firstname;
     private String lastname;
     private String nickname;
-    private String comment;
+    /*private String comment;
     private String homePhoneNumber;
     private String mobilePhoneNumber;
-    private String email;
+    private String email;*/
     private Date lastUpdate;
 
     public PhoneRecord() {}
@@ -20,10 +20,10 @@ public class PhoneRecord {
         this.firstname = inr.getFirstname();
         this.lastname = inr.getLastname();
         this.nickname = inr.getNickname();
-        this.comment = inr.getComment();
+        /*this.comment = inr.getComment();
         this.homePhoneNumber = inr.getHomePhoneNumber();
         this.mobilePhoneNumber = inr.getMobilePhoneNumber();
-        this.email = inr.getEmail();
+        this.email = inr.getEmail();*/
         this.lastUpdate = new Date(System.currentTimeMillis());
     }
 
@@ -47,7 +47,7 @@ public class PhoneRecord {
         this.nickname = nickname;
     }
 
-    public String getComment() {
+    /*public String getComment() {
         return comment;
     }
 
@@ -77,7 +77,7 @@ public class PhoneRecord {
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 
     public Date getLastUpdate() {
         return lastUpdate;
@@ -100,12 +100,12 @@ public class PhoneRecord {
         return "PhoneRecord{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", nickname='" + nickname + '\'' +
+                ", nickname='" + nickname + /*'\'' +
                 ", comment='" + comment + '\'' +
                 ", homePhoneNumber='" + homePhoneNumber + '\'' +
                 ", mobilePhoneNumber='" + mobilePhoneNumber + '\'' +
                 ", email='" + email + '\'' +
-                ", lastUpdate=" + lastUpdate +
+                ", lastUpdate=" + lastUpdate +*/
                 '}';
     }
 }

@@ -7,10 +7,10 @@ public class InputNotebookRecord {
     private String firstname;
     private String lastname;
     private String nickname;
-    private String comment;
+    /*private String comment;
     private String homePhoneNumber;
     private String mobilePhoneNumber;
-    private String email;
+    private String email;*/
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
@@ -28,7 +28,7 @@ public class InputNotebookRecord {
         return nickname;
     }
 
-    public String getComment() {
+    /*public String getComment() {
         return comment;
     }
 
@@ -42,7 +42,7 @@ public class InputNotebookRecord {
 
     public String getEmail() {
         return email;
-    }
+    }*/
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
@@ -52,7 +52,7 @@ public class InputNotebookRecord {
         this.nickname = nickname;
     }
 
-    public void setComment(String comment) {
+   /* public void setComment(String comment) {
         this.comment = comment;
     }
 
@@ -66,5 +66,19 @@ public class InputNotebookRecord {
 
     public void setEmail(String email) {
         this.email = email;
+    }*/
+
+    @Override
+    public String toString() {
+        return "Inputted record{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", nickname='" + nickname + /*'\'' +
+                ", comment='" + comment + '\'' +
+                ", homePhoneNumber='" + homePhoneNumber + '\'' +
+                ", mobilePhoneNumber='" + mobilePhoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", lastUpdate=" + lastUpdate +*/
+                '}';
     }
 }
